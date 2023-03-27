@@ -1,38 +1,204 @@
 .App {
-  text-align: center;
+  text-align: left;
+  font-family: Poppins;
+  background-color: #0c111a;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero-section{
+  background-image: url("./assets/images/background/Back.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: 80px;
+  background-attachment: fixed;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.layout{
+  width: 70%;
+  height: 100%;
+}
+
+.outlet{
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  padding-left: 11rem;
+  padding-right: 11rem;
+}
+
+section {
+  margin: 0;
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .outlet{
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  section{
+    padding: 60px 0px;
+    width: 100%;
+    margin: 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@font-face {
+  font-family: Poppins;
+  src: url("./assets/fonts/Lato-Regular.ttf");
+  font-display: swap;
+}
+
+#toast-message {
+  border-radius: 5px;
+  background-color: #040720;
+  border: 1px solid #562EBB;
+  color: #fff;
+}
+
+.preview-box {
+  background: rgba(18, 26, 35, 0.2);
+  box-shadow: 0px 8px 36px rgba(132, 145, 179, 0.18);
+  border-radius: 16px;
+}
+
+/* Collection Tab*/
+.collections-tab-group {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 56%;
+  padding-bottom: 20px;
+}
+
+.collections-tab-group .collection-tab-active {
+  background: transparent;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #23aee3;
+  border: none;
+  outline: none;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #23aee3;
+}
+
+.collections-tab-group .collection-tab-non-active {
+  background: transparent;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.5);
+  border: none;
+  outline: none;
+
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.collections-tab-group-light .collection-tab-non-active {
+  background: transparent;
+  cursor: pointer;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.5);
+  border: none;
+  outline: none;
+  width: 95%;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.collections-tab-group .collection-tab-non-active:hover {
+  color: #23aee3;
+}
+
+.user-card {
+  background: rgba(18, 26, 35, 0.2);
+  backdrop-filter: blur(24px);
+  border-radius: 16px;
+  border: 0.5px solid rgba(168, 168, 168, 0.2);
+  box-shadow: 0px 4px 4px #562EBB50;
+}
+
+.user-card:hover {
+  box-shadow: 0px 8px 8px #562EBB50;
+}
+
+.post-card {
+  background: rgba(18, 26, 35, 0.2);
+  box-shadow: 0px 8px 8px rgba(132, 145, 179, 0.18);
+  backdrop-filter: blur(24px);
+  border-radius: 16px;
+  border: 0.5px solid rgba(168, 168, 168, 0.1);
+}
+
+.people-card{
+  background: rgba(18, 26, 35, 0.2);
+  box-shadow: 0px 8px 8px rgba(132, 145, 179, 0.18);
+  backdrop-filter: blur(24px);
+  border-radius: 16px;
+  border: 0.5px solid rgba(168, 168, 168, 0.1);
+}
+
+.chat-card {
+  background: rgba(18, 26, 35, 0.2);
+  box-shadow: 0px 8px 8px rgba(132, 145, 179, 0.18);
+  backdrop-filter: blur(24px);
+  border-radius: 16px;
+  border: 0.5px solid rgba(168, 168, 168, 0.1);
+}
+
+.hero-button {
+  box-sizing: border-box;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background: linear-gradient(90deg,
+      rgba(35, 174, 227, 0.2) 0%,
+      rgba(155, 113, 216, 0.2) 52.08%,
+      rgba(253, 61, 206, 0.2) 95%);
+  backdrop-filter: blur(36px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-color: #fd3dce;
+  border-radius: 6px;
+  padding: 8px 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.speech-bubble-left {
+  border: 0.5px solid #ffffff20;
+  background-color: #2d158240;
+  height: auto;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 24px;
+  border-bottom-left-radius: 0px;
+  width: fit-content;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.speech-bubble-right {
+  border: 0.5px solid #ffffff20;
+  background-color: #06011a80;
+  height: auto;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 24px;
+  border-bottom-right-radius: 0px;
+  width: fit-content;
 }
+
+.speech-bubble {
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+
+
