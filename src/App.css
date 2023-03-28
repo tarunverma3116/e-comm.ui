@@ -4,7 +4,7 @@
   background-color: #0c111a;
 }
 
-.hero-section{
+.hero-section {
   background-image: url("./assets/images/background/Back.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,16 +12,16 @@
   background-attachment: fixed;
 }
 
-.layout{
+.layout {
   width: 70%;
   height: 100%;
 }
 
-.outlet{
+.outlet {
   padding-top: 5rem;
   padding-bottom: 2rem;
-  padding-left: 11rem;
-  padding-right: 11rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
 }
 
 section {
@@ -32,13 +32,13 @@ section {
 }
 
 @media (max-width: 768px) {
-  .outlet{
+  .outlet {
     padding-top: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  section{
+  section {
     padding: 60px 0px;
     width: 100%;
     margin: 0;
@@ -54,8 +54,46 @@ section {
 #toast-message {
   border-radius: 5px;
   background-color: #040720;
-  border: 1px solid #562EBB;
+  border: 1px solid #562ebb;
   color: #fff;
+}
+
+.title-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  color: #562ebb;
+  padding-bottom: 20px;
+}
+
+.primary-button {
+  background: linear-gradient(
+    90deg,
+    rgba(35, 173, 227, 1) 0%,
+    rgba(155, 113, 255, 1) 100%
+  );
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.primary-button:hover {
+  box-shadow: 0px 8px 8px #562ebb75;
 }
 
 .preview-box {
@@ -96,7 +134,6 @@ section {
   color: rgba(255, 255, 255, 0.5);
   border: none;
   outline: none;
-
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
@@ -126,11 +163,11 @@ section {
   backdrop-filter: blur(24px);
   border-radius: 16px;
   border: 0.5px solid rgba(168, 168, 168, 0.2);
-  box-shadow: 0px 4px 4px #562EBB50;
+  box-shadow: 0px 4px 4px #562ebb50;
 }
 
 .user-card:hover {
-  box-shadow: 0px 8px 8px #562EBB50;
+  box-shadow: 0px 8px 8px #562ebb50;
 }
 
 .post-card {
@@ -141,7 +178,7 @@ section {
   border: 0.5px solid rgba(168, 168, 168, 0.1);
 }
 
-.people-card{
+.people-card {
   background: rgba(18, 26, 35, 0.2);
   box-shadow: 0px 8px 8px rgba(132, 145, 179, 0.18);
   backdrop-filter: blur(24px);
@@ -161,10 +198,12 @@ section {
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(90deg,
-      rgba(35, 174, 227, 0.2) 0%,
-      rgba(155, 113, 216, 0.2) 52.08%,
-      rgba(253, 61, 206, 0.2) 95%);
+  background: linear-gradient(
+    90deg,
+    rgba(35, 174, 227, 0.2) 0%,
+    rgba(155, 113, 216, 0.2) 52.08%,
+    rgba(253, 61, 206, 0.2) 95%
+  );
   backdrop-filter: blur(36px);
   /* Note: backdrop-filter has minimal browser support */
   border-color: #fd3dce;
@@ -198,7 +237,3 @@ section {
   width: 100%;
   border-radius: 10px;
 }
-
-
-
-

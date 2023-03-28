@@ -23,7 +23,10 @@ const FormTextInput: React.FunctionComponent<IFormTextInputProps> = ({
   return (
     <div className="flex flex-col gap-1">
       <label
-        className={twMerge("block text-black font-semibold", labelClassname)}
+        className={twMerge(
+          "block text-white dark:text-black font-semibold",
+          labelClassname
+        )}
       >
         {label}
       </label>

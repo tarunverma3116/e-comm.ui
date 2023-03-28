@@ -9,7 +9,7 @@ export const TextInput = React.forwardRef<any, ITextInputProps>(
     <input
       {...props}
       className={twMerge(
-        "input w-full mx-auto rounded text-black border-1 p-3 focus:outline-none border-gray-300",
+        "input w-full bg-[#0C111A] mx-auto dark:bg-white rounded text-white dark:text-foreground-secondary border-1 p-3 border dark:border-[#BFCBD9] border-[#6A8099] focus:outline-none focus:ring-2 focus:ring-[#0C111A] dark:focus:ring-[#BFCBD9]",
         props.className
       )}
       ref={ref}

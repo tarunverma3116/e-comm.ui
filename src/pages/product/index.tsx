@@ -4,29 +4,54 @@ import { useParams } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { useSpinner } from "context/Spinner";
+import Rating from "@mui/material/Rating";
+import { styled } from "@mui/material/styles";
+import { MdOutlineDeleteOutline } from "react-icons/md";
+import { RxUpdate } from "react-icons/rx";
+import useDeleteProduct from "hooks/queries/useDeleteProduct";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 type Props = {};
+
+const StyledRating = styled(Rating)({
+  "& .MuiRating-iconFilled": {
+    color: "#562EBB",
+  },
+});
 
 const Product = (props: Props) => {
   const [product, setProduct] = React.useState<any>([]);
   const params = useParams();
-  console.log(params);
   const spinner = useSpinner();
+  const navigate = useNavigate();
 
   const FetchProduct = async () => {
     spinner.setLoadingState(true);
     const response = await useFetchProduct(params.id);
     setProduct(response);
+    console.log(response);
     spinner.setLoadingState(false);
   };
+
+  const HandleDelete = async () => {
+    spinner.setLoadingState(true);
+    const response = await useDeleteProduct(params.id);
+    console.log(response);
+    toast.success("Product deleted successfully");
+    spinner.setLoadingState(false);
+    // navigate("/products");
+  };
+
   React.useEffect(() => {
     FetchProduct();
   }, []);
 
   return (
     <section>
+      <p className="title-text">Product Details</p>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full h-full">
-        <div className="user-card w-full h-full p-3">
+        <div className="user-card dark:bg-[#00000005] w-full h-full p-3">
           <Carousel>
             {product?.images?.map((image: any, key: any) => {
               return (
@@ -37,31 +62,38 @@ const Product = (props: Props) => {
             })}
           </Carousel>
         </div>
-        <div className="product-details text-white dark:text-black flex flex-col gap-4">
+        <div className="product-details text-white dark:text-black flex flex-col gap-2">
           <h1 className="text-2xl font-bold">{product?.title}</h1>
+          <div className="flex gap-1 items-center">
+            <StyledRating
+              name="read-only"
+              value={product.rating ? product.rating : 0}
+              readOnly
+              precision={0.5}
+            />
+            <p className="rating text-xs text-gray-400">
+              ({product?.rating}/5)
+            </p>
+          </div>
+          <p className="text-base flex gap-1 items-center mb-1">
+            <span className="text-primary capitalize">{product.category}</span>/
+            {product?.brand}/{product?.title}
+          </p>
           <p className="text-base">{product?.description}</p>
-
           <p className="text-base font-bold flex gap-1 items-center mb-1">
             <span>₹{product?.price}</span>
             <span className="text-gray-400 text-xs">
               ({product?.discountPercentage}% off)
             </span>
           </p>
-          {/* <p className="rating text-xs text-gray-400">
-                    <StyledRating
-                    name="read-only"
-                    value={props.product.rating}
-                    readOnly
-                    />
-                    ({props.product.rating}/5)
-                </p> */}
-
           <div className="flex flex-row gap-2 w-full">
-            <button className="bg-[#562EBB] text-white rounded-md px-3 py-1">
-              Add to Cart
+            <button className="primary-button">
+              <span>Update Product</span>
+              <RxUpdate />
             </button>
-            <button className="bg-[#562EBB] text-white rounded-md px-3 py-1">
-              Buy Now
+            <button className="primary-button" onClick={HandleDelete}>
+              <span>Delete Product</span>
+              <MdOutlineDeleteOutline />
             </button>
           </div>
         </div>

@@ -1,13 +1,11 @@
 import React from "react";
 
-type Props = {
-  weather: any;
-};
+type Props = {};
 
 const Home = (props: Props) => {
-  console.log("weather in home", props.weather);
   return (
     <section>
+      <p className="title-text">Home</p>
       <div className="flex flex-col lg:flex-row w-full h-full gap-6"></div>
     </section>
   );

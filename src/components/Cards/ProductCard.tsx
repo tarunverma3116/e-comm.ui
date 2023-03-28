@@ -1,24 +1,15 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
-import Rating from "@mui/material/Rating";
-import { styled } from "@mui/material/styles";
 
 type Props = {
   product: any;
 };
-
-const StyledRating = styled(Rating)({
-  "& .MuiRating-iconFilled": {
-    color: "#562EBB",
-  },
-});
 
 const ProductCard = (props: Props) => {
   const navigate = useNavigate();
   return (
     <div
       onClick={() => {
-        navigate(`/product/${props.product.id}`);
+        navigate(`/products/${props.product.id}`);
       }}
       className="user-card text-white bg-[#562EBB] dark:bg-[#00000005] dark:text-black min-w-[250px] max-w-[320px] cursor-pointer rounded-md transform transition duration-500 hover:scale-110"
     >
@@ -40,14 +31,6 @@ const ProductCard = (props: Props) => {
               ({props.product.discountPercentage}% off)
             </span>
           </p>
-          {/* <p className="rating text-xs text-gray-400">
-            <StyledRating
-              name="read-only"
-              value={props.product.rating}
-              readOnly
-            />
-            ({props.product.rating}/5)
-          </p> */}
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ const SearchBox = (props: Props) => {
   return (
     <div className="relative hidden lg:flex items-center text-gray-600">
       <input
-        className="glass text-white font-bold text-s h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+        className="bg-[#0C111A] border dark:border-[#BFCBD9] border-[#6A8099] dark:bg-white text-white dark:text-black font-bold text-s h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
         type="search"
         name="search"
         placeholder="Search products..."
