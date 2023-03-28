@@ -9,6 +9,10 @@ type Props = {};
 const Layout = (props: Props) => {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    navigate("/home");
+  }, []);
+
   return (
     <div className="hero-section flex flex-col flex-grow max-h-full max-w-full min-h-[100vh]">
       <Navbar />

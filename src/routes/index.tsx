@@ -6,6 +6,7 @@ import Product from "pages/product";
 import Error from "pages/error";
 import Create from "pages/create";
 import Home from "pages/home";
+import ProductList from "pages/productlist";
 
 type Props = {};
 
@@ -14,7 +15,7 @@ export const PublicRoutes = (props: Props) => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="/home" element={<Home />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/products" element={<ProductList />} />
         <Route path="/products/:id" element={<Product />} />
         <Route path="/create" element={<Create />} />
         <Route path="*" element={<Error />} />

@@ -1,11 +1,10 @@
 import axios from 'axios';
-import createAuthRefreshInterceptor from 'axios-auth-refresh';
 import { queryClient } from 'index';
 
 const defaultOptions = {
-  baseURL: "http://localhost:5001/api/v1/",
+  baseURL: "https://dummyjson.com/products",
   headers: {
-    'Authorization': `Bearer ${localStorage.getItem('access_token')}`, 
+    // 'Authorization': `Bearer ${localStorage.getItem('access_token')}`, 
     'Content-Type': 'application/json',
   },
 };

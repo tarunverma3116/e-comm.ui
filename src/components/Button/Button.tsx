@@ -12,7 +12,7 @@ const PrimaryButton: React.FunctionComponent<IPrimaryButtonProps> = (props) => {
     <button
       {...props}
       className={twMerge(
-        "py-2 px-5 font-bold btn border-0 bg-foreground-accent rounded-md text-white  hover:hover:bg-foreground-accent hover:text-white font-bold relative overflow-hidden cursor-pointer",
+        "py-2 my-2 px-5 font-bold btn border-0 bg-primary hover:bg-primary rounded-md text-white hover:text-white font-bold relative overflow-hidden cursor-pointer",
         props.className
       )}
     >

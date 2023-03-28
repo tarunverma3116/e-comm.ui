@@ -8,7 +8,7 @@ interface IFormTextInputProps extends ITextInputProps {
   register?: () => UseFormRegisterReturn;
   label?: string;
   labelClassname?: string;
-  type?: "text" | "password";
+  type?: "text" | "password" | "number";
   error?: string;
 }
 
@@ -32,6 +32,14 @@ const FormTextInput: React.FunctionComponent<IFormTextInputProps> = ({
       </label>
       {(type === "text" || type === undefined) && (
         <TextInput
+          {...props}
+          {...(register && register())}
+          className={twMerge(props.className, error && "border-red-300")}
+        />
+      )}
+      {type === "number" && (
+        <TextInput
+          pattern="[0-9]*"
           {...props}
           {...(register && register())}
           className={twMerge(props.className, error && "border-red-300")}
