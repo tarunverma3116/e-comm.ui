@@ -50,43 +50,6 @@ section {
   backdrop-filter: blur(24px);
 }
 
-@media (max-width: 768px) {
-  .outlet {
-    padding-top: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  section {
-    padding: 60px 0px;
-    width: 100%;
-    margin: 0;
-  }
-}
-
-@font-face {
-  font-family: Poppins;
-  src: url("./assets/fonts/Lato-Regular.ttf");
-  font-display: swap;
-}
-
-#toast-message {
-  border-radius: 5px;
-  background-color: #040720;
-  border: 1px solid #562ebb;
-  color: #fff;
-}
-
-.title-text {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 36px;
-  color: #562ebb;
-  padding-bottom: 20px;
-}
-
 .primary-button {
   background: linear-gradient(
     90deg,
@@ -114,6 +77,69 @@ section {
 .primary-button:hover {
   box-shadow: 0px 8px 8px #562ebb75;
 }
+
+@media (max-width: 768px) {
+  .outlet {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  section {
+    padding: 60px 0px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .primary-button {
+    background: linear-gradient(
+    90deg,
+    rgba(35, 173, 227, 1) 0%,
+    rgba(155, 113, 255, 1) 100%
+  );
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all 0.3s ease-in-out;
+}
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url("./assets/fonts/Lato-Regular.ttf");
+  font-display: swap;
+}
+
+#toast-message {
+  border-radius: 5px;
+  background-color: #040720;
+  border: 1px solid #562ebb;
+  color: #fff;
+}
+
+.title-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  color: #562ebb;
+  padding-bottom: 20px;
+}
+
+
 
 /* Collection Tab*/
 .collections-tab-group {

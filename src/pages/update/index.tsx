@@ -76,7 +76,7 @@ const Update = (props: Props) => {
     console.log(response);
     if (response) {
       toast.success("Product Updated Successfully");
-      // navigate("/products");
+      navigate("/products");
     }
     spinner.setLoadingState(false);
   };
