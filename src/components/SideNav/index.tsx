@@ -17,9 +17,9 @@ const SideNav: React.FunctionComponent<ISideNavProps> = (props) => {
   const mainNavSettings = [
     {
       label: "Home",
-      link: "/home",
+      link: "/",
       icon: <GoHome />,
-      active: pathname === "/home" || pathname === "/home",
+      active: pathname === "/" || pathname === "/",
     },
     {
       label: "Products",

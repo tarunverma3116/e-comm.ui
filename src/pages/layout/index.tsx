@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import SideNav from "../../components/SideNav";
@@ -9,9 +9,9 @@ type Props = {};
 const Layout = (props: Props) => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    navigate("/home");
-  }, []);
+  // useEffect(() => {
+  //   navigate("/home");
+  // }, [navigate]);
 
   return (
     <div className="hero-section flex flex-col flex-grow max-h-full max-w-full min-h-[100vh]">

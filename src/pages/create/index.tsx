@@ -113,7 +113,7 @@ const Create = (props: Props) => {
                   </button>
                 </div>
               ))}
-            <div className="gap-2 cursor-pointer user-card">
+            <div className="gap-2 cursor-pointer user-card dark:bg-[#00000005]">
               <FileUpload setImages={setImages} images={images} />
             </div>
           </div>

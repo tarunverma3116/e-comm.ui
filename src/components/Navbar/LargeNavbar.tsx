@@ -1,22 +1,13 @@
 import * as React from "react";
-import { FiBell } from "react-icons/fi";
 import { DivProps } from "react-html-props";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo/logo.png";
-import SearchBox from "./SearchBox";
 import useDarkMode from "../../hooks/theme/useDarkMode";
 import DarkModeToggle from "react-dark-mode-toggle";
 
 interface INavbarProps extends DivProps {}
 
 const LargeNavbar: React.FunctionComponent<INavbarProps> = (props) => {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    localStorage.removeItem("access_token");
-    navigate("/login");
-  };
-
   const [colorTheme, setTheme] = useDarkMode();
   const [lightToggle, setLightToggle] = React.useState(
     colorTheme === "dark" ? true : false
@@ -40,12 +31,7 @@ const LargeNavbar: React.FunctionComponent<INavbarProps> = (props) => {
           onChange={toggleDarkMode}
           checked={lightToggle}
           size={56}
-          // onClick={handleThemeSwitch}
         />
-        <SearchBox />
-        {/* <button onClick={() => handleLogout()}>
-          <FiBell className="text-primary h-5 w-auto" />
-        </button> */}
       </div>
     </div>
   );

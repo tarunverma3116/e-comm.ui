@@ -40,7 +40,7 @@ const Product = (props: Props) => {
     console.log(response);
     toast.success("Product deleted successfully");
     spinner.setLoadingState(false);
-    // navigate("/products");
+    navigate("/products");
   };
 
   React.useEffect(() => {
@@ -87,7 +87,12 @@ const Product = (props: Props) => {
             </span>
           </p>
           <div className="flex flex-row gap-2 w-full">
-            <button className="primary-button">
+            <button
+              className="primary-button"
+              onClick={() => {
+                navigate(`/update/${params.id}`);
+              }}
+            >
               <span>Update Product</span>
               <RxUpdate />
             </button>

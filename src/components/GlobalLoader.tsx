@@ -1,4 +1,3 @@
-import useUserQuery from "hooks/queries/useUserQuery";
 import * as React from "react";
 
 interface IGlobalLoaderProps {
@@ -9,12 +8,6 @@ interface IGlobalLoaderProps {
 const GlobalLoader: React.FunctionComponent<IGlobalLoaderProps> = ({
   children,
 }) => {
-  const userQuery = useUserQuery();
-
-  if (userQuery.isLoading) {
-    return <div>loading...</div>;
-  }
-
   return <>{children}</>;
 };
 

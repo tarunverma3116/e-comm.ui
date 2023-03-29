@@ -20,7 +20,7 @@ const FileUpload = (props: Props) => {
 
   return (
     <label
-      className="flex w-full h-full justify-center items-center cursor-pointer"
+      className="flex w-full h-full justify-center items-center cursor-pointer bg-transparent"
       htmlFor="dropzone-file"
     >
       <div className="flex flex-col justify-center items-center h-[140px]">
