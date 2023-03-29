@@ -1,7 +1,6 @@
 import useFetchProductList from "hooks/queries/useFetchProductList";
 import React, { useState, useEffect } from "react";
 import { useSpinner } from "context/Spinner";
-import ProductCard from "components/Cards/ProductCard";
 import { useSearchParams } from "react-router-dom";
 import api from "axios";
 import { RiSearchLine } from "react-icons/ri";
@@ -22,7 +21,6 @@ const ProductList = () => {
     setLoading(true);
     try {
       const response = await useFetchProductList(9, skip);
-      console.log("response of limit and skip", skip, response);
       setProducts([...products, ...response.products]);
       setSkip(skip + 9);
     } catch (error) {
@@ -66,7 +64,6 @@ const ProductList = () => {
 
   useEffect(() => {
     const param = searchParams.get("q");
-    // console.log("Param to searc in api", param);
     HandleSearchProducts(param);
   }, [searchParams]);
 
