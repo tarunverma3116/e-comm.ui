@@ -69,10 +69,13 @@ const ProductList = () => {
 
   return (
     <section>
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col lg:flex-row justify-between items-center">
         <p className="title-text">All Products</p>
-        <form className="form-control" onSubmit={HandleSearchProducts}>
-          <div className="relative hidden lg:flex items-center text-gray-600">
+        <form
+          className="form-control mb-4 lg:mb-0"
+          onSubmit={HandleSearchProducts}
+        >
+          <div className="relative items-center text-gray-600">
             <input
               type="text"
               placeholder="Search for anything"
