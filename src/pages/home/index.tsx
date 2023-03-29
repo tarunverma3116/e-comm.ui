@@ -1,12 +1,15 @@
-import React from "react";
+import Categories from "./Categories";
+import RecentProducts from "./RecentProducts";
 
 type Props = {};
 
 const Home = (props: Props) => {
   return (
     <section>
-      <p className="title-text">Home</p>
-      <div className="flex flex-col lg:flex-row w-full h-full gap-6"></div>
+      <div className="flex flex-col gap-6">
+        <RecentProducts />
+        <Categories />
+      </div>
     </section>
   );
 };

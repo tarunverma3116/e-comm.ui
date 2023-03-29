@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import SideNav from "../../components/SideNav";
-import { useNavigate } from "react-router-dom";
 import MobileNav from "components/SideNav/MobileNav";
 
 type Props = {};

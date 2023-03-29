@@ -31,6 +31,25 @@ section {
   width: 100%;
 }
 
+.react-multiple-carousel__arrow::before {
+  font-size: 20px;
+  color: #562ebb !important;
+  display: block;
+  font-family: Poppins;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.react-multiple-carousel__arrow:hover {
+  background: white !important;
+}
+
+.react-multiple-carousel__arrow {
+  /* background: white !important; */
+  backdrop-filter: blur(24px);
+}
+
 @media (max-width: 768px) {
   .outlet {
     padding-top: 1rem;
@@ -96,46 +115,42 @@ section {
   box-shadow: 0px 8px 8px #562ebb75;
 }
 
-.preview-box {
-  background: rgba(18, 26, 35, 0.2);
-  box-shadow: 0px 8px 36px rgba(132, 145, 179, 0.18);
-  border-radius: 16px;
-}
-
 /* Collection Tab*/
 .collections-tab-group {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  width: 56%;
-  padding-bottom: 20px;
-}
+    padding-bottom: 20px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
 
 .collections-tab-group .collection-tab-active {
-  background: transparent;
+  background: #562ebb;
   cursor: pointer;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  color: #23aee3;
-  border: none;
-  outline: none;
-  padding-bottom: 20px;
-  border-bottom: 2px solid #23aee3;
+  padding: 8px 16px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  color: #ffffff;
+  border: 2px solid #562ebb;
 }
 
 .collections-tab-group .collection-tab-non-active {
-  background: transparent;
   cursor: pointer;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  color: rgba(255, 255, 255, 0.5);
-  border: none;
-  outline: none;
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 8px 16px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  color: #562ebb;
+  border: 2px solid #562ebb;
 }
 
 .collections-tab-group-light .collection-tab-non-active {
@@ -155,7 +170,7 @@ section {
 }
 
 .collections-tab-group .collection-tab-non-active:hover {
-  color: #23aee3;
+  color: #562ebb;
 }
 
 .user-card {
@@ -168,72 +183,4 @@ section {
 
 .user-card:hover {
   box-shadow: 0px 8px 8px #562ebb50;
-}
-
-.post-card {
-  background: rgba(18, 26, 35, 0.2);
-  box-shadow: 0px 8px 8px rgba(132, 145, 179, 0.18);
-  backdrop-filter: blur(24px);
-  border-radius: 16px;
-  border: 0.5px solid rgba(168, 168, 168, 0.1);
-}
-
-.people-card {
-  background: rgba(18, 26, 35, 0.2);
-  box-shadow: 0px 8px 8px rgba(132, 145, 179, 0.18);
-  backdrop-filter: blur(24px);
-  border-radius: 16px;
-  border: 0.5px solid rgba(168, 168, 168, 0.1);
-}
-
-.chat-card {
-  background: rgba(18, 26, 35, 0.2);
-  box-shadow: 0px 8px 8px rgba(132, 145, 179, 0.18);
-  backdrop-filter: blur(24px);
-  border-radius: 16px;
-  border: 0.5px solid rgba(168, 168, 168, 0.1);
-}
-
-.hero-button {
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(
-    90deg,
-    rgba(35, 174, 227, 0.2) 0%,
-    rgba(155, 113, 216, 0.2) 52.08%,
-    rgba(253, 61, 206, 0.2) 95%
-  );
-  backdrop-filter: blur(36px);
-  /* Note: backdrop-filter has minimal browser support */
-  border-color: #fd3dce;
-  border-radius: 6px;
-  padding: 8px 16px;
-}
-
-.speech-bubble-left {
-  border: 0.5px solid #ffffff20;
-  background-color: #2d158240;
-  height: auto;
-  padding: 8px 12px;
-  margin-bottom: 10px;
-  border-radius: 24px;
-  border-bottom-left-radius: 0px;
-  width: fit-content;
-}
-
-.speech-bubble-right {
-  border: 0.5px solid #ffffff20;
-  background-color: #06011a80;
-  height: auto;
-  padding: 8px 12px;
-  margin-bottom: 10px;
-  border-radius: 24px;
-  border-bottom-right-radius: 0px;
-  width: fit-content;
-}
-
-.speech-bubble {
-  width: 100%;
-  border-radius: 10px;
 }
