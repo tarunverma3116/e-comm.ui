@@ -10,10 +10,10 @@ const Layout = (props: Props) => {
   return (
     <div className="hero-section flex flex-col flex-grow max-h-full max-w-full min-h-[100vh]">
       <Navbar />
-      <div className="flex flex-grow max-h-full min-h-0 relative max-w-full overflow-x-hidden">
+      <div className="flex z-100 flex-grow max-h-full min-h-0 relative max-w-full overflow-x-hidden">
         <SideNav />
         <div className="min-h-0 max-h-full max-w-full overflow-y-auto flex-grow scrollbar-hide">
-          <div className="outlet relative">
+          <div className="outlet static">
             <Outlet />
             <div className="bottom-0 flex lg:hidden">
               <MobileNav />
