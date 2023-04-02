@@ -1,10 +1,8 @@
-import React from "react";
-import NavbarLink from "../Navbar/NavbarLink";
 import { NavLink, useLocation } from "react-router-dom";
 import { BiMessageSquareAdd } from "react-icons/bi";
 import { CgFeed } from "react-icons/cg";
-import { TfiArrowCircleRight, TfiArrowCircleLeft } from "react-icons/tfi";
 import { GoHome } from "react-icons/go";
+import { MdOutlineCalculate } from "react-icons/md";
 
 type Props = {};
 
@@ -29,6 +27,12 @@ const MobileNav = (props: Props) => {
       link: "/create",
       icon: <BiMessageSquareAdd />,
       active: pathname === "/create" || pathname === "/create",
+    },
+    {
+      label: "Calculate",
+      link: "/test",
+      icon: <MdOutlineCalculate />,
+      active: pathname === "/test" || pathname === "/test",
     },
   ];
 

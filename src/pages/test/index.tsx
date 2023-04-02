@@ -42,9 +42,9 @@ const Test = (props: Props) => {
     <section className="text-white flex flex-col gap-6">
       <h1>Test</h1>
       <div className="flex flex-col gap-6">
-        {response.map((item, index) => {
+        {response.map((item, key) => {
           return (
-            <div key={index} className="flex flex-col gap-3">
+            <div key={key} className="flex flex-col gap-3">
               <label className="text-sm font-bold">{item.name}</label>
               <input
                 id="quantity"
