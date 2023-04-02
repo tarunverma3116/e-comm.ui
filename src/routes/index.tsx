@@ -7,6 +7,7 @@ import Create from "pages/create";
 import Home from "pages/home";
 import ProductList from "pages/productlist";
 import Update from "pages/update";
+import Test from "pages/test";
 
 type Props = {};
 
@@ -20,6 +21,7 @@ export const PublicRoutes = (props: Props) => {
         <Route path="/create" element={<Create />} />
         <Route path="/update/:id" element={<Update />} />
         <Route path="*" element={<Error />} />
+        <Route path="/test" element={<Test />} />
       </Route>
     </Routes>
   );

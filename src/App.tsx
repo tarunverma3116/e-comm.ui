@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <BrowserRouter>
         <div className="App dark:bg-white">
           <PublicRoutes />
@@ -25,7 +25,7 @@ function App() {
           />
         </div>
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 
