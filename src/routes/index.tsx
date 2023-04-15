@@ -8,6 +8,7 @@ import Home from "pages/home";
 import ProductList from "pages/productlist";
 import Update from "pages/update";
 import Test from "pages/test";
+import Cart from "pages/cart";
 
 type Props = {};
 
@@ -22,6 +23,7 @@ export const PublicRoutes = (props: Props) => {
         <Route path="/update/:id" element={<Update />} />
         <Route path="*" element={<Error />} />
         <Route path="/test" element={<Test />} />
+        <Route path="/cart" element={<Cart />} />
       </Route>
     </Routes>
   );

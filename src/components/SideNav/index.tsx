@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import NavbarLink from "../Navbar/NavbarLink";
 import { useLocation } from "react-router-dom";
-import { BiMessageSquareAdd } from "react-icons/bi";
+import { HiViewGridAdd } from "react-icons/hi";
 import { CgFeed } from "react-icons/cg";
 import { TfiArrowCircleRight, TfiArrowCircleLeft } from "react-icons/tfi";
 import { GoHome } from "react-icons/go";
-import { MdOutlineCalculate } from "react-icons/md";
+import { RiShoppingCartLine } from "react-icons/ri";
 
 interface ISideNavProps {}
 
@@ -31,15 +31,21 @@ const SideNav: React.FunctionComponent<ISideNavProps> = (props) => {
     {
       label: "Create",
       link: "/create",
-      icon: <BiMessageSquareAdd />,
+      icon: <HiViewGridAdd />,
       active: pathname === "/create" || pathname === "/create",
     },
-    {
-      label: "Calculate",
-      link: "/test",
-      icon: <MdOutlineCalculate />,
-      active: pathname === "/test" || pathname === "/test",
-    },
+    // {
+    //   label: "Cart",
+    //   link: "/cart",
+    //   icon: <RiShoppingCartLine />,
+    //   active: pathname === "/cart" || pathname === "/cart",
+    // },
+    // {
+    //   label: "Calculate",
+    //   link: "/test",
+    //   icon: <MdOutlineCalculate />,
+    //   active: pathname === "/test" || pathname === "/test",
+    // },
   ];
 
   return (

@@ -1,8 +1,8 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { BiMessageSquareAdd } from "react-icons/bi";
+import { HiViewGridAdd } from "react-icons/hi";
 import { CgFeed } from "react-icons/cg";
 import { GoHome } from "react-icons/go";
-import { MdOutlineCalculate } from "react-icons/md";
+import { RiShoppingCartLine } from "react-icons/ri";
 
 type Props = {};
 
@@ -25,15 +25,21 @@ const MobileNav = (props: Props) => {
     {
       label: "Create",
       link: "/create",
-      icon: <BiMessageSquareAdd />,
+      icon: <HiViewGridAdd />,
       active: pathname === "/create" || pathname === "/create",
     },
-    {
-      label: "Calculate",
-      link: "/test",
-      icon: <MdOutlineCalculate />,
-      active: pathname === "/test" || pathname === "/test",
-    },
+    // {
+    //   label: "Cart",
+    //   link: "/cart",
+    //   icon: <RiShoppingCartLine />,
+    //   active: pathname === "/cart" || pathname === "/cart",
+    // },
+    // {
+    //   label: "Calculate",
+    //   link: "/test",
+    //   icon: <MdOutlineCalculate />,
+    //   active: pathname === "/test" || pathname === "/test",
+    // },
   ];
 
   return (

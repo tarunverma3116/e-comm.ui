@@ -93,10 +93,10 @@ section {
 
   .primary-button {
     background: linear-gradient(
-    90deg,
-    rgba(35, 173, 227, 1) 0%,
-    rgba(155, 113, 255, 1) 100%
-  );
+      90deg,
+      rgba(35, 173, 227, 1) 0%,
+      rgba(155, 113, 255, 1) 100%
+    );
     border-radius: 12px;
     border: none;
     outline: none;
@@ -113,7 +113,7 @@ section {
     justify-content: center;
     gap: 5px;
     transition: all 0.3s ease-in-out;
-}
+  }
 }
 
 @font-face {
@@ -141,12 +141,12 @@ section {
 
 /* Collection Tab*/
 .collections-tab-group {
-    padding-bottom: 20px;
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-  }
+  padding-bottom: 20px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
 
 .collections-tab-group .collection-tab-active {
   background: #562ebb;

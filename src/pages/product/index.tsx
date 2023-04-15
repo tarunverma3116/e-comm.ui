@@ -6,12 +6,13 @@ import { Carousel } from "react-responsive-carousel";
 import { useSpinner } from "context/Spinner";
 import Rating from "@mui/material/Rating";
 import { styled } from "@mui/material/styles";
-import { MdOutlineDeleteOutline } from "react-icons/md";
-import { RxUpdate } from "react-icons/rx";
+import { AiFillThunderbolt } from "react-icons/ai";
+import { BiCartAdd } from "react-icons/bi";
 import useDeleteProduct from "hooks/queries/useDeleteProduct";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import SimilarProduct from "./SimilarProduct";
+import useCart from "store/store";
 
 type Props = {};
 
@@ -47,6 +48,20 @@ const Product = (props: Props) => {
   React.useEffect(() => {
     FetchProduct();
   }, []);
+
+  const addTocart = useCart((state) => state.addTocart);
+  const updatecart = useCart((state) => state.updatecart);
+  const mycart = useCart((state) => state.cartContent);
+
+  const addProduct = (params: any) => {
+    const product = mycart.findIndex((item: any) => item.id === params.id);
+    if (product !== -1) {
+      mycart[product].quantity++;
+      updatecart({ params, mycart });
+    } else {
+      addTocart(params);
+    }
+  };
 
   return (
     <section className="flex flex-col gap-6">
@@ -94,15 +109,22 @@ const Product = (props: Props) => {
               <button
                 className="primary-button"
                 onClick={() => {
-                  navigate(`/update/${params.id}`);
+                  addProduct(product);
+                  toast.success("Product added to cart");
                 }}
               >
-                <span>Update Product</span>
-                <RxUpdate />
+                <span>Add To Cart</span>
+                <BiCartAdd />
               </button>
-              <button className="primary-button" onClick={HandleDelete}>
-                <span>Delete Product</span>
-                <MdOutlineDeleteOutline />
+              <button
+                className="primary-button"
+                onClick={() => {
+                  addProduct(product);
+                  navigate("/cart");
+                }}
+              >
+                <span>Buy Now</span>
+                <AiFillThunderbolt />
               </button>
             </div>
           </div>
