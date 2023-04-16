@@ -22,7 +22,6 @@ const Cart = (props: Props) => {
 
   useEffect(() => {
     setCart(cart);
-    console.log(cart, "cart items");
     setTotal(total);
   }, [cart]);
 

@@ -36,14 +36,14 @@ const Product = (props: Props) => {
     spinner.setLoadingState(false);
   };
 
-  const HandleDelete = async () => {
-    spinner.setLoadingState(true);
-    const response = await useDeleteProduct(params.id);
-    console.log(response);
-    toast.success("Product deleted successfully");
-    spinner.setLoadingState(false);
-    navigate("/products");
-  };
+  // const HandleDelete = async () => {
+  //   spinner.setLoadingState(true);
+  //   const response = await useDeleteProduct(params.id);
+  //   console.log(response);
+  //   toast.success("Product deleted successfully");
+  //   spinner.setLoadingState(false);
+  //   navigate("/products");
+  // };
 
   React.useEffect(() => {
     FetchProduct();
@@ -54,20 +54,14 @@ const Product = (props: Props) => {
   const mycart = useCart((state) => state.cartContent);
 
   const addProduct = (params: any) => {
-    console.log(params, "product to cart");
     const product = mycart.findIndex((item: any) => item.id === params.id);
     const item = params;
     item.quantity = 1;
-    console.log("mycart before adding", mycart);
-    console.log("item to cart", item);
     if (product !== -1) {
       mycart[product].quantity++;
       updatecart({ params, mycart });
-      console.log("mycart after updating", mycart);
     } else {
       addTocart(params);
-      console.log("mycart after adding", mycart);
-      // mycart[product].quantity = 1;
     }
   };
 
