@@ -23,14 +23,15 @@ const useCart = create(
       clearCart: () => set({ totalqty: 0, total: 0, cartContent: [] }),
       removeFromCart: (params) =>
         set((state) => ({
-          total: state.total - params.price * params.quantity,
+          // total: state.total - params.price * params.quantity,
+          total: state.total - parseFloat(params.price),
           totalqty: state.totalqty - params.quantity,
           cartContent: state.cartContent.filter(
             (item) => item.id !== params.id
           ),
         })),
     }),
-    { name: "cart" }
+    { name: "cart", getStorage: () => sessionStorage }
   )
 );
 export default useCart;

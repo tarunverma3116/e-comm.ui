@@ -54,12 +54,16 @@ const Product = (props: Props) => {
   const mycart = useCart((state) => state.cartContent);
 
   const addProduct = (params: any) => {
+    console.log(params, "product to cart");
     const product = mycart.findIndex((item: any) => item.id === params.id);
     if (product !== -1) {
       mycart[product].quantity++;
       updatecart({ params, mycart });
+      console.log("mycart after updating", mycart);
     } else {
       addTocart(params);
+      console.log("mycart after adding", mycart[product]);
+      // mycart[product].quantity = 1;
     }
   };
 
