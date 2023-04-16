@@ -23,8 +23,7 @@ const useCart = create(
       clearCart: () => set({ totalqty: 0, total: 0, cartContent: [] }),
       removeFromCart: (params) =>
         set((state) => ({
-          // total: state.total - params.price * params.quantity,
-          total: state.total - parseFloat(params.price),
+          total: state.total - parseFloat(params.price * params.quantity),
           totalqty: state.totalqty - params.quantity,
           cartContent: state.cartContent.filter(
             (item) => item.id !== params.id

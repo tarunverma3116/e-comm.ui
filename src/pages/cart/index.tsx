@@ -3,6 +3,7 @@ import useCart from "store/store";
 import { Link } from "react-router-dom";
 import basket from "assets/images/svg/basket.png";
 import { MdOutlineDelete } from "react-icons/md";
+import { toast } from "react-toastify";
 
 type Props = {};
 
@@ -59,13 +60,18 @@ const Cart = (props: Props) => {
                           {item.description}
                         </span>
                         <p className="text-xl text-gray-400 flex items-center">
-                          ₹{item.price}
-                          <span className="text-xs text-success ml-1">
-                            {item.discountPercentage} off
+                          <span className="text-success font-bold mr-2">
+                            ₹{item.price}
+                          </span>
+                          <span className="text-gray-400 text-xs">
+                            ({item.discountPercentage}% off)
                           </span>
                         </p>
-                        <span className="basis-1/4 text-right">
-                          {item.quantity}
+                        <span className="text-sm text-gray-500">
+                          Quantity - {item.quantity}
+                        </span>
+                        <span className="text-sm text-gray-500">
+                          Amount - ₹{item.quantity * item.price}
                         </span>
                       </div>
                       <div className="absolute bottom-0 right-0">
@@ -84,7 +90,15 @@ const Cart = (props: Props) => {
               })}
             <div className="flex flex-row w-full justify-between items-center mt-4">
               <span className="uppercase font-bold">Total: ₹{mytotal}</span>
-              <button className="primary-button">Place Order</button>
+              <button
+                className="primary-button"
+                onClick={() => {
+                  toast.success("Order Placed Successfully");
+                  clearCart();
+                }}
+              >
+                Place Order
+              </button>
             </div>
           </div>
         </div>
