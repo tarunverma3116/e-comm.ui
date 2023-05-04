@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import SideNav from "../../components/SideNav";
 import MobileNav from "components/SideNav/MobileNav";
+import Footer from "components/Footer";
 
 type Props = {};
 
@@ -17,6 +18,7 @@ const Layout = (props: Props) => {
             <div className="bottom-0 flex lg:hidden">
               <MobileNav />
             </div>
+            <Footer />
           </div>
         </div>
       </div>

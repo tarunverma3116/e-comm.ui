@@ -55,7 +55,7 @@ const Categories = (props: Props) => {
             );
           })}
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full h-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full h-full">
         {products?.map((product: any, key: any) => {
           return <ProductCard key={key} product={product} />;
         })}

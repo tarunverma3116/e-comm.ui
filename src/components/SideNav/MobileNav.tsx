@@ -2,7 +2,6 @@ import { NavLink, useLocation } from "react-router-dom";
 import { HiViewGridAdd } from "react-icons/hi";
 import { CgFeed } from "react-icons/cg";
 import { GoHome } from "react-icons/go";
-import { RiShoppingCartLine } from "react-icons/ri";
 
 type Props = {};
 
@@ -28,23 +27,11 @@ const MobileNav = (props: Props) => {
       icon: <HiViewGridAdd />,
       active: pathname === "/create" || pathname === "/create",
     },
-    // {
-    //   label: "Cart",
-    //   link: "/cart",
-    //   icon: <RiShoppingCartLine />,
-    //   active: pathname === "/cart" || pathname === "/cart",
-    // },
-    // {
-    //   label: "Calculate",
-    //   link: "/test",
-    //   icon: <MdOutlineCalculate />,
-    //   active: pathname === "/test" || pathname === "/test",
-    // },
   ];
 
   return (
     <div className="fixed bottom-0 left-0 z-50 w-full h-14 backdrop-blur-xl rounded-md">
-      <div className="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
+      <div className="grid h-full max-w-lg grid-cols-3 mx-auto font-medium">
         {mainNavSettings.map((navItem, key: any) => (
           <NavLink
             to={navItem.link}
