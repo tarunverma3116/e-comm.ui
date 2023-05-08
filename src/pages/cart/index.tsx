@@ -13,15 +13,42 @@ const Cart = (props: Props) => {
   const clearCart = useCart((state) => state.clearCart);
 
   const removeFromCart = useCart((state) => state.removeFromCart);
-  const [mycart, setCart] = useState([]);
   const [mytotal, setTotal] = useState();
+
+  const addTocart = useCart((state) => state.addTocart);
+  const updatecart = useCart((state) => state.updatecart);
+  const negatecart = useCart((state) => state.negatecart);
+  const mycart = useCart((state) => state.cartContent);
 
   const handleClearCart = () => {
     clearCart();
   };
 
+  const HandleDecreaseItem = (params: any) => {
+    const product = mycart.findIndex((item: any) => item.id === params.id);
+    if (mycart[product].quantity > 1) {
+      mycart[product].quantity--;
+      negatecart({ params, mycart });
+    } else {
+      removeFromCart(params);
+    }
+  };
+
+  const HandleIncreaseItem = (params: any) => {
+    const product = mycart.findIndex((item: any) => item.id === params.id);
+    const item = params;
+    // item.quantity = 1;
+    if (product !== -1) {
+      mycart[product].quantity++;
+      updatecart({ params, mycart });
+    } else {
+      addTocart(params);
+    }
+    console.log(mycart);
+  };
+
   useEffect(() => {
-    setCart(cart);
+    // setCart(cart);
     setTotal(total);
   }, [cart]);
 
@@ -66,11 +93,31 @@ const Cart = (props: Props) => {
                             ({item.discountPercentage}% off)
                           </span>
                         </p>
-                        <span className="text-sm text-gray-500">
-                          Quantity - {item.quantity}
-                        </span>
-                        <span className="text-sm text-gray-500">
-                          Amount - ₹{item.quantity * item.price}
+                        <div className="flex gap-3 items-center text-sm text-white dark:text-black">
+                          <span>Quantity</span>
+                          <button
+                            className="w-7 h-7 rounded-full border"
+                            onClick={() => {
+                              HandleDecreaseItem(item);
+                            }}
+                          >
+                            -
+                          </button>
+                          <span> {item.quantity}</span>
+                          <button
+                            className="w-7 h-7 rounded-full border"
+                            onClick={() => {
+                              HandleIncreaseItem(item);
+                            }}
+                          >
+                            +
+                          </button>
+                        </div>
+                        <span className="text-sm text-gray-500 mt-2">
+                          Amount -{" "}
+                          <span className="text-xl">
+                            ₹{item.quantity * item.price}
+                          </span>
                         </span>
                       </div>
                       <div className="absolute bottom-0 right-0">
@@ -88,7 +135,7 @@ const Cart = (props: Props) => {
                 );
               })}
             <div className="flex flex-row w-full justify-between items-center mt-4">
-              <span className="uppercase font-bold">Total: ₹{mytotal}</span>
+              <span className="uppercase font-bold">Total: ₹{total}</span>
               <button
                 className="primary-button"
                 onClick={() => {

@@ -8,7 +8,6 @@ import Rating from "@mui/material/Rating";
 import { styled } from "@mui/material/styles";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { BiCartAdd } from "react-icons/bi";
-import useDeleteProduct from "hooks/queries/useDeleteProduct";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import SimilarProduct from "./SimilarProduct";

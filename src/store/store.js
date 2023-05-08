@@ -21,6 +21,13 @@ const useCart = create(
         }));
       },
       clearCart: () => set({ totalqty: 0, total: 0, cartContent: [] }),
+      negatecart: ({ params, mycart }) => {
+        set((state) => ({
+          totalqty: state.totalqty - 1,
+          total: state.total - parseFloat(params.price),
+          cartContent: mycart,
+        }));
+      },
       removeFromCart: (params) =>
         set((state) => ({
           total: state.total - parseFloat(params.price * params.quantity),
