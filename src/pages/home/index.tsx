@@ -8,7 +8,7 @@ const Home = (props: Props) => {
     <section>
       <div className="flex flex-col gap-6">
         <RecentProducts />
-        <Categories />
+        {/* <Categories /> */}
       </div>
     </section>
   );
