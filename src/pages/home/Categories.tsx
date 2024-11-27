@@ -39,7 +39,7 @@ const Categories = (props: Props) => {
     <div className="flex flex-col gap-3">
       <p className="title-text">Browse by Categories</p>
       <div className="collections-tab-group overflow-x-scroll">
-        {categories &&
+        {categories.length > 0 &&
           categories.map((category: any) => {
             return (
               <button
@@ -55,11 +55,11 @@ const Categories = (props: Props) => {
             );
           })}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full h-full">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full h-full">
         {products?.map((product: any, key: any) => {
           return <ProductCard key={key} product={product} />;
         })}
-      </div>
+      </div> */}
     </div>
   );
 };
